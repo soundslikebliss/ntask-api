@@ -1,18 +1,15 @@
 import express from "express";
 import consign from "consign";
 
-const PORT = 3000;
+
 const app = express();
 
 
-//formatting for json output
-app.set('json spaces', 4);
-
-
-//load routes (consign module)
+//load modules
 consign()
-	.include("routes")
+	.include('libs/db_config.js')
+	.then('db.js')
+	.then('libs/middlewares.js')
+	.then('routes')
+	.then('libs/boot.js')
 	.into(app);
-
-
-app.listen(PORT, () => console.log('NTask API - Port ${PORT}'));

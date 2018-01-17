@@ -1,12 +1,38 @@
 module.exports = app => {
 
-	app.get("/tasks", (req, res) => {
-		res.json({
-			tasks: [
-				{title: 'Buy some shoes'},
-				{title: 'Fix notebook'}
-			]
+	const Tasks = app.db.models.Tasks;
+
+
+	app.route('tasks')
+
+		.all((req, res) => {
+
+		})
+
+		.get((req, res) => {
+
+		})
+
+		.post((req, res) => {
+
 		});
-	});
-	
+
+
+	app.route('tasks/:id')
+
+		.all((req, res) => {
+
+		})
+
+		.get((req, res) => {
+
+		})
+
+		.put((req, res) => {
+
+		})
+
+		.delete((req, res) => {
+
+		});
 };
